@@ -13,7 +13,6 @@ const AddTodo = () => {
   }
   
   const removeTodo = (index) => {
-    debugger;
     const updatedTodos = todos.filter((_, i) => i !== index);
     setTodos(updatedTodos);
     localStorage.setItem('todo-v1', JSON.stringify(updatedTodos));
