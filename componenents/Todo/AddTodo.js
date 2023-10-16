@@ -6,12 +6,12 @@ const AddTodo = () => {
   const [description, setDescription] = useState("")
   const [todos, setTodos] = useState([])
 
-  
+
   const removeTodos = () => {
     localStorage.clear("todo-v1")
     setTodos([])
   }
-  
+
   const removeTodo = (index) => {
     const updatedTodos = todos.filter((_, i) => i !== index);
     setTodos(updatedTodos);
@@ -19,17 +19,19 @@ const AddTodo = () => {
   }
 
   const getTodos = () => {
-    const getTodos = JSON.parse(localStorage.getItem("todo-v1"))
-    setTodos(getTodos)
+    const getTodosList = JSON.parse(localStorage.getItem("todo-v1"))
+    setTodos(getTodosList)
   }
 
   const addTodo = () => {
+    debugger;
     const data = {
       title: title,
       description: description
     }
 
-    const updatedTodos = [...todos, data];
+    const updatedTodos = todos ? [...todos, data] : [data];
+
     setTodos(updatedTodos);
     localStorage.setItem('todo-v1', JSON.stringify(updatedTodos));
     setTitle("")

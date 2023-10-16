@@ -8,8 +8,8 @@ const ShowTodos = (props) => {
             <div className="container my-4">
                 <div className="row" >
                     {
-                        todos != null && todos.length > 0 ? todos.map((elem, index) => {
-                            return <div className="card col-3 mx-2 my-2" key={index} style={{ width: "18rem" }}>
+                        todos?.length > 0 ? todos.map((elem, index) => {
+                            return <div className="card col-4 mx-2 my-2" key={index} style={{ width: "18rem" }}>
                                 <div className="card-body">
                                     <div className="card-title">
                                         <div className="flt-r">
